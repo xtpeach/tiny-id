@@ -1,0 +1,57 @@
+#online
+server:
+  port: 31234
+
+### eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL:http://eureka_admin:eureka_admin1!3@127.0.0.1:8761/eureka/}
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+
+# spring
+spring:
+  application:
+    name: tiny-id-server
+  #main
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  # database
+  datasource:
+    driver: org.postgresql.Driver
+    url: ${DATASOURCE_URL:jdbc:postgresql://127.0.0.1:5432/xxl_job}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:postgres}
+    # datasource-pool
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: ${HIKARI_MINIMUM_IDLE:10}
+      maximum-pool-size: ${HIKARI_MAXIMUM_POOL_SIZE:30}
+      auto-commit: ${HIKARI_AUTO_COMMIT:true}
+      idle-timeout: ${HIKARI_IDLE_TIMEOUT:30000}
+      pool-name: HikariCP
+      max-lifetime: ${HIKARI_MAX_LIFETIME:900000}
+      connection-timeout: ${HIKARI_CONNECTION_TIMEOUT:10000}
+      connection-test-query: ${HIKARI_CONNECTION_TEST_QUERY:SELECT 1}
+      validation-timeout: ${HIKARI_VALIDATION_TIMEOUT:1000}
+  # jpa
+  jpa:
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO:update}
+    show-sql: ${HIBERNATE_SHOW_SQL:true}
+
+# tiny-id
+batch:
+  size:
+    max: 100000
+
+# actuator/info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health
