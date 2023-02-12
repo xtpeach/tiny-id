@@ -25,10 +25,10 @@ public class TinyIdInfoExecutor extends XLSExecutor<TinyIdInfo> implements Comma
         // 获取已有的 tiny_id_info 如果已经有了就不进行初始化
         List<TinyIdInfo> tinyIdInfoListSaved = repo.findAll();
         if (CollectionUtils.isNotEmpty(tinyIdInfoListSaved)) {
-            tinyIdInfoListSaved.removeIf(
-                    tinyIdInfoSaved ->
+            tinyIdInfoList.removeIf(
+                    tinyIdInfo ->
                             !ObjectUtils.isEmpty(
-                                    tinyIdInfoList.stream().filter(tinyIdInfo
+                                    tinyIdInfoListSaved.stream().filter(tinyIdInfoSaved
                                             -> tinyIdInfoSaved.getId().longValue() == tinyIdInfo.getId().longValue())
                                             .findFirst().orElse(null)
                             )
