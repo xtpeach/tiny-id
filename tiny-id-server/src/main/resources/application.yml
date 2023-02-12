@@ -24,6 +24,7 @@ spring:
         namespace: ${NACOS_DISCOVERY_NAMESPACE:public}
         group: ${NACOS_DISCOVERY_NAMESPACE:DEFAULT_GROUP}
         ephemeral: ${NACOS_DISCOVERY_EPHEMERAL:true}
+        weight: ${NACOS_DISCOVERY_WEIGHT:1}
 
   #application
   application:
@@ -35,7 +36,7 @@ spring:
   # database
   datasource:
     driver: org.postgresql.Driver
-    url: ${DATASOURCE_URL:jdbc:postgresql://127.0.0.1:5432/xxl_job}
+    url: ${DATASOURCE_URL:jdbc:postgresql://127.0.0.1:5432/tiny_id}
     username: ${DATASOURCE_USERNAME:postgres}
     password: ${DATASOURCE_PASSWORD:12345678}
     # datasource-pool
