@@ -30,7 +30,7 @@ spring:
     # sentinel
     sentinel:
       transport:
-        dashboard: 127.0.0.1:3761
+        dashboard: ${SENTINEL_TRANSPORT_DASHBOARD:127.0.0.1:3761}
 
   #application
   application:
