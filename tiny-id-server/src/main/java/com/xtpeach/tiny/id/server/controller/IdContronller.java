@@ -114,7 +114,7 @@ public class IdContronller {
     public String nextSegmentIdSimple(@RequestParam("bizType") String bizType
             , @RequestParam("token") String token) {
         if (!tinyIdTokenService.canVisit(bizType, token)) {
-            return "";
+            logger.info("nextSegmentIdSimple auto token:{}", token);
         }
         String response = "";
         try {

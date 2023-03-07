@@ -23,4 +23,12 @@ public interface TinyIdInfoDAO {
      * @return
      */
     int updateMaxId(Long id, Long newMaxId, Long oldMaxId, Long version, String bizType);
+
+    /**
+     * 创建 tinyId
+     * @param tinyIdInfo
+     * @return
+     */
+    int createByBizType(TinyIdInfo tinyIdInfo);
+
 }

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 
@@ -44,7 +45,18 @@ public class DbSegmentIdServiceImpl implements SegmentIdService {
         for (int i = 0; i < Constants.RETRY; i++) {
             TinyIdInfo tinyIdInfo = tinyIdInfoDAO.queryByBizType(bizType);
             if (tinyIdInfo == null) {
-                throw new TinyIdSysException("can not find biztype:" + bizType);
+                tinyIdInfo = new TinyIdInfo();
+                tinyIdInfo.setId(System.currentTimeMillis());
+                tinyIdInfo.setBizType(bizType);
+                tinyIdInfo.setBeginId(0L);
+                tinyIdInfo.setMaxId(0L);
+                tinyIdInfo.setStep(10);
+                tinyIdInfo.setDelta(1);
+                tinyIdInfo.setRemainder(0);
+                tinyIdInfo.setCreateTime(new Date());
+                tinyIdInfo.setUpdateTime(new Date());
+                tinyIdInfo.setVersion(0L);
+                tinyIdInfoDAO.createByBizType(tinyIdInfo);
             }
             Long newMaxId = tinyIdInfo.getMaxId() + tinyIdInfo.getStep();
             Long oldMaxId = tinyIdInfo.getMaxId();
