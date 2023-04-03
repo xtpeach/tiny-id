@@ -1,4 +1,4 @@
-package com.xtpeach.tinyid.base.util;
+package com.xtpeach.tiny.id.base.util;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

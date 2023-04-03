@@ -1,7 +1,7 @@
 package com.xtpeach.tiny.id.utils;
 
 import com.xtpeach.tiny.id.factory.impl.IdGeneratorFactoryClient;
-import com.xtpeach.tinyid.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;

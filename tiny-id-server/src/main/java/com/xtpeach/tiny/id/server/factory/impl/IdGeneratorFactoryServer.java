@@ -1,9 +1,9 @@
 package com.xtpeach.tiny.id.server.factory.impl;
 
-import com.xtpeach.tinyid.base.factory.AbstractIdGeneratorFactory;
-import com.xtpeach.tinyid.base.generator.IdGenerator;
-import com.xtpeach.tinyid.base.generator.impl.CachedIdGenerator;
-import com.xtpeach.tinyid.base.service.SegmentIdService;
+import com.xtpeach.tiny.id.base.factory.AbstractIdGeneratorFactory;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.generator.impl.CachedIdGenerator;
+import com.xtpeach.tiny.id.base.service.SegmentIdService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

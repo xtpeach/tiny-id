@@ -1,8 +1,8 @@
 package com.xtpeach.tiny.id.server.service.impl;
 
-import com.xtpeach.tinyid.base.entity.SegmentId;
-import com.xtpeach.tinyid.base.exception.TinyIdSysException;
-import com.xtpeach.tinyid.base.service.SegmentIdService;
+import com.xtpeach.tiny.id.base.entity.SegmentId;
+import com.xtpeach.tiny.id.base.exception.TinyIdSysException;
+import com.xtpeach.tiny.id.base.service.SegmentIdService;
 import com.xtpeach.tiny.id.server.common.Constants;
 import com.xtpeach.tiny.id.server.dao.TinyIdInfoDAO;
 import com.xtpeach.tiny.id.server.dao.entity.TinyIdInfo;

@@ -1,7 +1,7 @@
 package com.xtpeach.tiny.id.server;
 
 import com.xtpeach.tiny.id.server.factory.impl.IdGeneratorFactoryServer;
-import com.xtpeach.tinyid.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

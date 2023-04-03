@@ -1,4 +1,4 @@
-package com.xtpeach.tinyid.base.entity;
+package com.xtpeach.tiny.id.base.entity;
 
 /**
  * @author xtpeach

@@ -1,6 +1,6 @@
-package com.xtpeach.tinyid.base.factory;
+package com.xtpeach.tiny.id.base.factory;
 
-import com.xtpeach.tinyid.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
 
 /**
  * @author xtpeach

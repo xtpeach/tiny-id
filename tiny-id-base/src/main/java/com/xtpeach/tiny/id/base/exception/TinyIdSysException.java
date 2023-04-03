@@ -1,4 +1,4 @@
-package com.xtpeach.tinyid.base.exception;
+package com.xtpeach.tiny.id.base.exception;
 
 /**
  * @author xtpeach
