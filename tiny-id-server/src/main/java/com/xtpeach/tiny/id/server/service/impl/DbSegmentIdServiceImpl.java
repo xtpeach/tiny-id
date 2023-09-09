@@ -1,8 +1,8 @@
 package com.xtpeach.tiny.id.server.service.impl;
 
-import com.xtpeach.tinyid.base.entity.SegmentId;
-import com.xtpeach.tinyid.base.exception.TinyIdSysException;
-import com.xtpeach.tinyid.base.service.SegmentIdService;
+import com.xtpeach.tiny.id.base.entity.SegmentId;
+import com.xtpeach.tiny.id.base.exception.TinyIdSysException;
+import com.xtpeach.tiny.id.base.service.SegmentIdService;
 import com.xtpeach.tiny.id.server.common.Constants;
 import com.xtpeach.tiny.id.server.dao.TinyIdInfoDAO;
 import com.xtpeach.tiny.id.server.dao.entity.TinyIdInfo;
@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 
@@ -44,7 +45,18 @@ public class DbSegmentIdServiceImpl implements SegmentIdService {
         for (int i = 0; i < Constants.RETRY; i++) {
             TinyIdInfo tinyIdInfo = tinyIdInfoDAO.queryByBizType(bizType);
             if (tinyIdInfo == null) {
-                throw new TinyIdSysException("can not find biztype:" + bizType);
+                tinyIdInfo = new TinyIdInfo();
+                tinyIdInfo.setId(System.currentTimeMillis());
+                tinyIdInfo.setBizType(bizType);
+                tinyIdInfo.setBeginId(0L);
+                tinyIdInfo.setMaxId(0L);
+                tinyIdInfo.setStep(10);
+                tinyIdInfo.setDelta(1);
+                tinyIdInfo.setRemainder(0);
+                tinyIdInfo.setCreateTime(new Date());
+                tinyIdInfo.setUpdateTime(new Date());
+                tinyIdInfo.setVersion(0L);
+                tinyIdInfoDAO.createByBizType(tinyIdInfo);
             }
             Long newMaxId = tinyIdInfo.getMaxId() + tinyIdInfo.getStep();
             Long oldMaxId = tinyIdInfo.getMaxId();

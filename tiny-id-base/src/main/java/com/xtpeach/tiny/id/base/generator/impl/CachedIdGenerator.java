@@ -1,12 +1,12 @@
-package com.xtpeach.tinyid.base.generator.impl;
+package com.xtpeach.tiny.id.base.generator.impl;
 
-import com.xtpeach.tinyid.base.entity.Result;
-import com.xtpeach.tinyid.base.entity.ResultCode;
-import com.xtpeach.tinyid.base.entity.SegmentId;
-import com.xtpeach.tinyid.base.exception.TinyIdSysException;
-import com.xtpeach.tinyid.base.generator.IdGenerator;
-import com.xtpeach.tinyid.base.service.SegmentIdService;
-import com.xtpeach.tinyid.base.util.NamedThreadFactory;
+import com.xtpeach.tiny.id.base.exception.TinyIdSysException;
+import com.xtpeach.tiny.id.base.service.SegmentIdService;
+import com.xtpeach.tiny.id.base.entity.Result;
+import com.xtpeach.tiny.id.base.entity.ResultCode;
+import com.xtpeach.tiny.id.base.entity.SegmentId;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.util.NamedThreadFactory;
 
 import java.util.ArrayList;
 import java.util.List;

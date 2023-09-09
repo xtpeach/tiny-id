@@ -4,9 +4,9 @@ import com.xtpeach.tiny.id.server.factory.impl.IdGeneratorFactoryServer;
 import com.xtpeach.tiny.id.server.service.TinyIdTokenService;
 import com.xtpeach.tiny.id.server.vo.ErrorCode;
 import com.xtpeach.tiny.id.server.vo.Response;
-import com.xtpeach.tinyid.base.entity.SegmentId;
-import com.xtpeach.tinyid.base.generator.IdGenerator;
-import com.xtpeach.tinyid.base.service.SegmentIdService;
+import com.xtpeach.tiny.id.base.entity.SegmentId;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.service.SegmentIdService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,7 +114,7 @@ public class IdContronller {
     public String nextSegmentIdSimple(@RequestParam("bizType") String bizType
             , @RequestParam("token") String token) {
         if (!tinyIdTokenService.canVisit(bizType, token)) {
-            return "";
+            logger.info("nextSegmentIdSimple auto token:{}", token);
         }
         String response = "";
         try {

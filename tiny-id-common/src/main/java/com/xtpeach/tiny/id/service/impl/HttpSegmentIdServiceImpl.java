@@ -1,8 +1,8 @@
 package com.xtpeach.tiny.id.service.impl;
 
 import com.xtpeach.tiny.id.config.TinyIdConfig;
-import com.xtpeach.tinyid.base.entity.SegmentId;
-import com.xtpeach.tinyid.base.service.SegmentIdService;
+import com.xtpeach.tiny.id.base.entity.SegmentId;
+import com.xtpeach.tiny.id.base.service.SegmentIdService;
 
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;

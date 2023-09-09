@@ -1,9 +1,9 @@
 package com.xtpeach.tiny.id.factory.impl;
 
 import com.xtpeach.tiny.id.config.TinyIdClientConfig;
-import com.xtpeach.tinyid.base.factory.AbstractIdGeneratorFactory;
-import com.xtpeach.tinyid.base.generator.IdGenerator;
-import com.xtpeach.tinyid.base.generator.impl.CachedIdGenerator;
+import com.xtpeach.tiny.id.base.factory.AbstractIdGeneratorFactory;
+import com.xtpeach.tiny.id.base.generator.IdGenerator;
+import com.xtpeach.tiny.id.base.generator.impl.CachedIdGenerator;
 import com.xtpeach.tiny.id.service.impl.HttpSegmentIdServiceImpl;
 
 import java.text.MessageFormat;

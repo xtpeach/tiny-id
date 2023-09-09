@@ -40,9 +40,7 @@ public class TinyIdInfoDAOImpl implements TinyIdInfoDAO {
         return jdbcTemplate.update(sql, newMaxId, id, oldMaxId, version, bizType);
     }
 
-
     public static class TinyIdInfoRowMapper implements RowMapper<TinyIdInfo> {
-
         @Override
         public TinyIdInfo mapRow(ResultSet resultSet, int i) throws SQLException {
             TinyIdInfo tinyIdInfo = new TinyIdInfo();
@@ -59,4 +57,13 @@ public class TinyIdInfoDAOImpl implements TinyIdInfoDAO {
             return tinyIdInfo;
         }
     }
+
+    @Override
+    public int createByBizType(TinyIdInfo tinyIdInfo) {
+        String sql = "insert into tiny_id_info(id, begin_id, biz_type, create_time, delta, max_id, remainder, step, update_time, version)" +
+                " values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        return jdbcTemplate.update(sql, tinyIdInfo.getId(), tinyIdInfo.getBeginId(), tinyIdInfo.getBizType(), tinyIdInfo.getCreateTime(), tinyIdInfo.getDelta(),
+                tinyIdInfo.getMaxId(), tinyIdInfo.getRemainder(), tinyIdInfo.getStep(), tinyIdInfo.getUpdateTime(), tinyIdInfo.getVersion());
+    }
+
 }

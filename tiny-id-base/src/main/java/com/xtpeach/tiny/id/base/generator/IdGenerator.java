@@ -1,4 +1,4 @@
-package com.xtpeach.tinyid.base.generator;
+package com.xtpeach.tiny.id.base.generator;
 
 import java.util.List;
 

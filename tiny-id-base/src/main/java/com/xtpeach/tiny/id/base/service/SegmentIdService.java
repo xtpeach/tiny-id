@@ -1,6 +1,6 @@
-package com.xtpeach.tinyid.base.service;
+package com.xtpeach.tiny.id.base.service;
 
-import com.xtpeach.tinyid.base.entity.SegmentId;
+import com.xtpeach.tiny.id.base.entity.SegmentId;
 
 /**
  * @author xtpeach
