@@ -1,4 +1,4 @@
-﻿FROM openjdk:8-jdk-alpine
+﻿FROM openjdk:8-jdk
 MAINTAINER xtpeach
 ADD app/{project.name}-{project.version}.jar app.jar
 ENV JAVA_OPTS=${JAVA_OPTS} \

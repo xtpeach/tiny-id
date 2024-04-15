@@ -8,6 +8,7 @@ services:
     ports:
       - 31234:31234
     environment:
+      TZ: ${TIMEZONE:-Asia/Shanghai}
       # jvm参数设置
       #-Duser.timezone=Asia/Shanghai
       #-Dclient.encoding.override=UTF-8
@@ -87,6 +88,5 @@ services:
       
     network_mode: "host"
     volumes:
-      - /etc/localtime:/etc/localtime
-      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
       - /home/logs:/home/logs
