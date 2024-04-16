@@ -54,37 +54,37 @@ services:
       #-XX:NumberOfGCLogFiles=5
       #-XX:GCLogFileSize=5M
       #-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5050
-      JAVA_OPTS: -Xms1024m -Xmx1024m -Xmn400m -Xss1M -XX:MetaspaceSize=256M -XX:MaxMetaspaceSize=256M -Duser.timezone=Asia/Shanghai -Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Djava.security.egd=file:/dev/./urandom -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1 -XX:SurvivorRatio=8 -XX:MaxTenuringThreshold=5 -XX:PretenureSizeThreshold=1M -XX:+ExplicitGCInvokesConcurrent -XX:+ScavengeBeforeFullGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=9 -XX:+CMSScavengeBeforeRemark -XX:+CMSParallelInitialMarkEnabled -XX:+CMSParallelRemarkEnabled -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/HeapDumpOnOutOfMemoryError/ -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationConcurrentTime -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -Xloggc:/var/log/gc.log -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=5M
-      JAR_OPTS: --logging.path=/home/logs/
+      JAVA_OPTS: "-Xms1024m -Xmx1024m -Xmn400m -Xss1M -XX:MetaspaceSize=256M -XX:MaxMetaspaceSize=256M -Duser.timezone=Asia/Shanghai -Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Djava.security.egd=file:/dev/./urandom -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1 -XX:SurvivorRatio=8 -XX:MaxTenuringThreshold=5 -XX:PretenureSizeThreshold=1M -XX:+ExplicitGCInvokesConcurrent -XX:+ScavengeBeforeFullGC -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=9 -XX:+CMSScavengeBeforeRemark -XX:+CMSParallelInitialMarkEnabled -XX:+CMSParallelRemarkEnabled -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/HeapDumpOnOutOfMemoryError/ -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationConcurrentTime -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -Xloggc:/var/log/gc.log -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=5M"
+      JAR_OPTS: "--logging.path=/home/logs/"
 
       # 其他全部 application.yml 中的参数
-      EUREKA_CLIENT_SERVICEURL: http://eureka_admin:eureka_admin1!3@127.0.0.1:8761/eureka/
-      NACOS_SERVER_ADDR: http://127.0.0.1:8848
-      NACOS_DISCOVERY_CLUSTER_NAME: DEFAULT
-      NACOS_DISCOVERY_USERNAME: nacos
-      NACOS_DISCOVERY_PASSWORD: nacos
-      NACOS_DISCOVERY_NAMESPACE: public
-      NACOS_DISCOVERY_GROUP: DEFAULT_GROUP
-      NACOS_DISCOVERY_EPHEMERAL: true
-      NACOS_DISCOVERY_WEIGHT: 1
+      EUREKA_CLIENT_SERVICEURL: "http://eureka_admin:eureka_admin1!3@127.0.0.1:8761/eureka/"
+      NACOS_SERVER_ADDR: "http://127.0.0.1:8848"
+      NACOS_DISCOVERY_CLUSTER_NAME: "DEFAULT"
+      NACOS_DISCOVERY_USERNAME: "nacos"
+      NACOS_DISCOVERY_PASSWORD: "nacos"
+      NACOS_DISCOVERY_NAMESPACE: "public"
+      NACOS_DISCOVERY_GROUP: "DEFAULT_GROUP"
+      NACOS_DISCOVERY_EPHEMERAL: "true"
+      NACOS_DISCOVERY_WEIGHT: "1"
       
-      DATASOURCE_URL: jdbc:postgresql://127.0.0.1:5432/tiny_id
-      DATASOURCE_USERNAME: postgres
-      DATASOURCE_PASSWORD: 12345678
+      DATASOURCE_URL: "jdbc:postgresql://127.0.0.1:5432/tiny_id"
+      DATASOURCE_USERNAME: "postgres"
+      DATASOURCE_PASSWORD: "12345678"
       
-      HIKARI_MINIMUM_IDLE: 10
-      HIKARI_MAXIMUM_POOL_SIZE: 30
-      HIKARI_AUTO_COMMIT: true
-      HIKARI_IDLE_TIMEOUT: 30000
-      HIKARI_MAX_LIFETIME: 900000
-      HIKARI_CONNECTION_TIMEOUT: 10000
-      HIKARI_CONNECTION_TEST_QUERY: SELECT 1
-      HIKARI_VALIDATION_TIMEOUT: 1000
+      HIKARI_MINIMUM_IDLE: "10"
+      HIKARI_MAXIMUM_POOL_SIZE: "30"
+      HIKARI_AUTO_COMMIT: "true"
+      HIKARI_IDLE_TIMEOUT: "30000"
+      HIKARI_MAX_LIFETIME: "900000"
+      HIKARI_CONNECTION_TIMEOUT: "10000"
+      HIKARI_CONNECTION_TEST_QUERY: "SELECT 1"
+      HIKARI_VALIDATION_TIMEOUT: "1000"
       
-      HIBERNATE_DDL_AUTO: update
-      HIBERNATE_SHOW_SQL: true
+      HIBERNATE_DDL_AUTO: "update"
+      HIBERNATE_SHOW_SQL: "true"
       
-      BATCH_SIZE_MAX: 100000
+      BATCH_SIZE_MAX: "100000"
       
     network_mode: "host"
     volumes:
